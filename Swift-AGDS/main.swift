@@ -7,5 +7,8 @@
 
 import Foundation
 
-print("Hello, World!")
 
+print(isPalindrome(word: "madbm"))
+print(isPalindrome(word: "racecar"))
+
+printUpto(10)
