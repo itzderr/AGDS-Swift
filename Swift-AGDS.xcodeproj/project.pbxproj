@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4E92795029BA879B00BF9B1D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E92794F29BA879B00BF9B1D /* main.swift */; };
 		4E92795829BA87C900BF9B1D /* Recursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E92795729BA87C900BF9B1D /* Recursion.swift */; };
+		4E92795C29BBD8ED00BF9B1D /* String+DPStringTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E92795B29BBD8ED00BF9B1D /* String+DPStringTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		4E92794F29BA879B00BF9B1D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4E92795729BA87C900BF9B1D /* Recursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recursion.swift; sourceTree = "<group>"; };
 		4E92795929BA917100BF9B1D /* story.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = story.txt; sourceTree = "<group>"; };
+		4E92795B29BBD8ED00BF9B1D /* String+DPStringTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+DPStringTool.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		4E92794E29BA879B00BF9B1D /* Swift-AGDS */ = {
 			isa = PBXGroup;
 			children = (
+				4E92795A29BBD8DF00BF9B1D /* Utils */,
 				4E92795629BA87B500BF9B1D /* Recursion */,
 				4E92794F29BA879B00BF9B1D /* main.swift */,
 			);
@@ -73,6 +76,14 @@
 				4E92795929BA917100BF9B1D /* story.txt */,
 			);
 			path = Recursion;
+			sourceTree = "<group>";
+		};
+		4E92795A29BBD8DF00BF9B1D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4E92795B29BBD8ED00BF9B1D /* String+DPStringTool.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E92795C29BBD8ED00BF9B1D /* String+DPStringTool.swift in Sources */,
 				4E92795829BA87C900BF9B1D /* Recursion.swift in Sources */,
 				4E92795029BA879B00BF9B1D /* main.swift in Sources */,
 			);

@@ -32,11 +32,23 @@ func isPalindrome(word: String) -> Bool {
 
 // 3. printBinary(n): prints binary form of given int
 func printBinary(_ n: Int) {
-  
+  // base case
+  printBinaryHelper(n)
 }
 
-func printBinaryHelper(_ n: Int, _ str: String) {
-  
+func printBinaryHelper(_ n: Int, _ padding: String = "") {
+  print(padding, #function, n)
+  if n < 0 {
+    print("-", terminator: "")
+    printBinaryHelper(-n, padding + " ")
+  }
+  // base case
+  if n < 2 {
+    print(n, terminator: "")
+    return
+  }
+  printBinaryHelper(n / 2, padding + "  ")
+  print(n % 2, terminator: "")
 }
 
 // 4. reverseLines
@@ -44,7 +56,11 @@ func printBinaryHelper(_ n: Int, _ str: String) {
 // - You can change the function header if you want
 func reverseLines(_ line: Int) {
   let contents = try! String(contentsOfFile: "/Users/park/Desktop/Swift-AGDS/Swift-AGDS/Recursion/story.txt")
-  print(contents)
+  let sentences = contents.split(separator: "\n")
+  if line < sentences.count {
+    reverseLines(line + 1)
+    print(sentences[line])
+  }
 }
 
 // 5. evaluate
@@ -59,5 +75,29 @@ func reverseLines(_ line: Int) {
 // evaluate("(1+(2*4))")         -> 9
 // evaluate("((1+3)+((1+2)*5))") -> 19
 func evaluate(_ expr: String) -> Int {
-  return 0
+  var i = 0
+  return evaluateHelper(expr, &i)
+}
+
+func evaluateHelper(_ expr: String, _ i: inout Int) -> Int {
+  // self-similar? yes! math expressions are self-similar
+  // base case
+  if Character(expr[i]).isNumber {
+    return Int(expr[i])!
+  } else {
+    // operand, operator
+    // expression = (ex op ex) => num
+    i += 1  // skip (
+    let left = evaluateHelper(expr, &i)
+    i += 1
+    let op = expr[i]
+    i += 1
+    let right = evaluateHelper(expr, &i)
+    i += 1  // skip )
+    if op == "+" {
+      return left + right
+    } else {
+      return left * right
+    }
+  }
 }

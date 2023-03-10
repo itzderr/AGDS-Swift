@@ -11,4 +11,6 @@ import Foundation
 print(isPalindrome(word: "madbm"))
 print(isPalindrome(word: "racecar"))
 
-printUpto(10)
+printBinary(15)
+print()
+print(evaluate("((1+3)+((1+2)*5))"))
